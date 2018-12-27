@@ -40,7 +40,7 @@ function primeList() {
 }
 
 // Define function for factorizing a number given a prime list
-function findFactors(n, myPrimeList) {
+function getFactors(n, myPrimeList) {
     // Returns all factors of n, excluding 1 and n, unless additional
     // prime factors exist that are not present in myPrimeList, in
     // which case an empty list will be returned.
@@ -79,18 +79,32 @@ function findFactors(n, myPrimeList) {
 }
 
 // Define function for computing triangular number list
-
+function getTriangNums(n) {
+    // Returns a list of the first n triangular numbers
+    
+    var out = [1];
+    var lastVal = 1;
+    var newVal = 0;
+    for (var i=2; i<=n; i++) {
+        newVal = lastVal + i;
+        out.push(newVal);
+        lastVal = newVal;
+    }
+    return out;
+}
 
 
 //Main
 primes = primeList();
 //console.log(primes.slice(0,10))
 
-var factors = findFactors(29*2*11*13, primes)
-//console.log(factors)
+//var tris = getTriangNums(5e7);
 
+var tris = getTriangNums(10);
 
-
+for (var i=0; i < tris.length; i++) {
+    console.log(i, tris[i], getFactors(tris[i], primes));
+}
 
 
 
