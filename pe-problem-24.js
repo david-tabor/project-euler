@@ -33,15 +33,30 @@ function isPerm(n) {
 }
 
 // Initialize variables
-var counter = 0;
+var counter = 997920 + 1; // 2*9! + 6*8! + 6*7! + 1
+
+// 2*9! + 1
+// 2013456789
+
+
+// 2*9! + 6*8! + 1
+// 2701345689
+
+//  2*9! + 6*8! + 6*7! + 1
+// 2780134569
 
 // Iterate through all possible 10 digit numbers in ascending order
 // checking if their order generates a valid permutation of 0-9.
-for (var i =123456789; i<=98765432210; i++) {
+for (var i =2780134569 + 1; i<=3000000000; i++) {
     if (isPerm(i)) {
         counter += 1;
-        if (counter == 100000) {
-            console.log('reached counter=1000 at i=', i)
+
+        if (counter % 1000 == 0) {
+            console.log('reached counter = ', counter)
+        }
+
+        if (counter == 1000000) {
+            console.log('reached counter=1000000 at i=', i)
             break;
         }
     }
