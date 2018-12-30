@@ -1,16 +1,20 @@
 
 
-
-
-
-
 // Define function to check for repeating decimals from a string
 function FindRepeating(myString, minCycleLength){
-    len = myString.length;
+    var s = myString;
+    var slen = myString.length;
+    var clen = minCycleLength;
 
-    
+    // Check for cycle of length 'clen' starting at s[0]
+    var target = s.slice(0, clen);
+
+    return 0;
 }
 
+
+
+// Define function to check 
 
 
 // Generate string representation of decimal expression
